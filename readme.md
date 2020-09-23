@@ -7,5 +7,6 @@ run:
 ```
 make install
 make run_ideal
+make run_upi
 
 ```
