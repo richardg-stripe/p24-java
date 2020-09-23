@@ -29,9 +29,12 @@ public class Ideal
                 .build();
             PaymentIntent paymentIntent = PaymentIntent.create(params);
             System.out.println(paymentIntent);
+            System.out.println(paymentIntent.getNextAction().getRedirectToUrl().getUrl().toString());
+            System.out.println("^^^ Follow the redirect then press any key");
+
             // The customer follows the redirect URL to their iDEAL bank!
             System.in.read();
-            
+
             // Manually confirm the payment
             PaymentIntent confirmedPaymentIntent = paymentIntent.confirm();
             System.out.println(confirmedPaymentIntent);
