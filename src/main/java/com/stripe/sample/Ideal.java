@@ -17,11 +17,15 @@ public class Ideal
         try {
             Dotenv dotenv = Dotenv.load();
             Stripe.apiKey = dotenv.get("STRIPE_SECRET_KEY");
+            
+            // We have a stripe.js element to help list the iDeal banks!
+            String idealBank = "rabobank"; 
+            
             PaymentIntentCreateParams params = PaymentIntentCreateParams.builder()
                 .setAmount(1099L)
                 .setCurrency("eur")
                 .addPaymentMethodType("ideal")
-                .putExtraParam("payment_method_data[ideal][bank]", "rabobank")
+                .putExtraParam("payment_method_data[ideal][bank]", idealBank)
                 .putExtraParam("payment_method_data[type]", "ideal")
                 .setReturnUrl("http://m.com/finishedPayment")
                 .setConfirmationMethod(ConfirmationMethod.MANUAL)
