@@ -17,8 +17,6 @@ import io.github.cdimascio.dotenv.Dotenv;
  */
 public class Boleto {
 
-
-
 	public static void main(String[] args) {
 		try {
 			// Docs: https://stripe.com/docs/payments/boleto
@@ -29,7 +27,9 @@ public class Boleto {
 
 
 			// "Stripe-Version: 2020-08-27; boleto_pilot_beta=v1"
-			PaymentIntentCreateParams params = new PaymentIntentCreateParams.Builder().setAmount(1099L).setCurrency("brl")
+			PaymentIntentCreateParams params = PaymentIntentCreateParams.builder()
+					.setAmount(1099L)
+					.setCurrency("brl")
 					.addPaymentMethodType("boleto_pilot")
 					.putExtraParam("payment_method_data[boleto_pilot][tax_id]", "123123")
 					.putExtraParam("payment_method_data[type]", "boleto_pilot")
@@ -47,7 +47,7 @@ public class Boleto {
 
 			// Person cashes the Boleto Voucher offline...
 
-			
+
 		} catch (Exception exception) {
 			System.out.println(exception);
 		}
