@@ -25,8 +25,6 @@ public class Boleto {
 
 			// Stripe.API_VERSION = "2019-05-16;boleto_pilot_beta=v1";
 
-
-			// "Stripe-Version: 2020-08-27; boleto_pilot_beta=v1"
 			PaymentIntentCreateParams params = PaymentIntentCreateParams.builder()
 					.setAmount(1099L)
 					.setCurrency("brl")
