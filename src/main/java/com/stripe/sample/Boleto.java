@@ -11,10 +11,6 @@ import com.stripe.param.PaymentIntentCreateParams;
 
 import io.github.cdimascio.dotenv.Dotenv;
 
-/**
- * Hello world!
- *
- */
 public class Boleto {
 
 	public static void main(String[] args) {

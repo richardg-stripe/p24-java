@@ -6,10 +6,6 @@ import com.stripe.model.PaymentIntent;
 import com.stripe.param.PaymentIntentCreateParams;
 import com.stripe.param.PaymentIntentCreateParams.ConfirmationMethod;
 
-/**
- * Hello world!
- *
- */
 public class Ideal
 {
     public static void main(String[] args)
